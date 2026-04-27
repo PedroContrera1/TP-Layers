@@ -4,12 +4,11 @@ import ejercicio1.modelo.Participante;
 import ejercicio1.modelo.RegistroDeParticipantes;
 
 import java.sql.Connection;
-import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
 public class JdbcRegistroDeParticipantes implements RegistroDeParticipantes {
-    private Connection conexion;
+    private final Connection conexion;
     public JdbcRegistroDeParticipantes(Connection conexion){
         this.conexion=conexion;
     }

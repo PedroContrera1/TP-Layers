@@ -1,7 +1,7 @@
 package ejercicio1.modelo;
 
 public class Participantes {
-    private RegistroDeParticipantes registroDeParticipantes;
+    private final RegistroDeParticipantes registroDeParticipantes;
     public Participantes(RegistroDeParticipantes registroDeParticipantes){
         this.registroDeParticipantes=registroDeParticipantes;
     }

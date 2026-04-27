@@ -1,4 +1,4 @@
-package ejercicio1;
+/*package ejercicio1;
 
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -15,12 +15,12 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.border.EmptyBorder;
 
-public class AgregarParticipante extends JFrame {
+public class AgregarParticipantes extends JFrame {
     private Connection dbConn;
     private JTextField nombre;
     private JTextField telefono;
     private JTextField region;
-    public AgregarParticipante() throws SQLException {
+    public AgregarParticipantes() throws SQLException {
         setupBaseDeDatos();
         setupUIComponents();
     }
@@ -80,7 +80,7 @@ public class AgregarParticipante extends JFrame {
         }
         if (!region.getText().equals("China") && !region.getText().equals("US") && !
                 region.getText().equals("Europa")) {
-            JOptionPane.showMessageDialog(this, "Region desconocida. Las conocidas son: China, US, EU");
+            JOptionPane.showMessageDialog(this, "Region desconocida. Las conocidas son: China, US, Europa");
             return;
         }
         PreparedStatement st = dbConn
@@ -100,3 +100,5 @@ public class AgregarParticipante extends JFrame {
         return telefono.matches(regex);
     }
 }
+*/
+

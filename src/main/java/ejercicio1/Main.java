@@ -1,16 +1,23 @@
 package ejercicio1;
+import ejercicio1.Persistence.ConnectionManager;
+import ejercicio1.Persistence.JdbcRegistroDeParticipantes;
+import ejercicio1.UI.AgregarParticipantes;
+import ejercicio1.modelo.Participantes;
+import ejercicio1.modelo.RegistroDeParticipantes;
+
 import java.awt.EventQueue;
-import java.sql.SQLException;
 public class Main {
-    public static void main(String[] args) throws SQLException {
-        EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                try {
-                    new AgregarParticipante();
-                } catch (Exception e) {
-                    System.out.println(e);
-                }
-            }
+
+    static void main() {
+        EventQueue.invokeLater(() -> {
+
+            RegistroDeParticipantes registro =
+                    new JdbcRegistroDeParticipantes(ConnectionManager.conectar());
+
+            Participantes participantes =
+                    new Participantes(registro);
+
+            new AgregarParticipantes(participantes);
         });
     }
 }

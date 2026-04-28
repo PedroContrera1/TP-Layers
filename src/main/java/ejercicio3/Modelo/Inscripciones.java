@@ -25,7 +25,7 @@ public class Inscripciones {
             String email,
             Concurso concurso
     ) {
-        Participante participante = new Participante(nombre, apellido, dni, telefono, email);
+        Participante participante = new Participante(dni, nombre, apellido, email, telefono);
         Inscripcion inscripcion = new Inscripcion(participante, concurso);
         registroInscripciones.guardar(inscripcion);
     }

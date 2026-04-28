@@ -47,4 +47,8 @@ public class Concurso {
     public String idConcurso(){
         return idConcurso;
     }
+    @Override
+    public String toString() {
+        return idConcurso + " - " + nombre;
+    }
 }

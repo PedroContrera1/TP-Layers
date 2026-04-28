@@ -9,7 +9,7 @@ import javax.swing.LayoutStyle.ComponentPlacement;
 import javax.swing.border.EmptyBorder;
 
 public class RadioCompetition {
-    private JPanel contentPane;
+    private final JPanel contentPane;
     private  JLabel lblName;
     private JTextField txtName;
     private JLabel lblLastName;
@@ -81,11 +81,11 @@ public class RadioCompetition {
             Concurso concurso = (Concurso) comboBox.getSelectedItem();
 
             servicio.inscribir(
-                    txtName.getText(),
-                    txtLastName.getText(),
-                    txtId.getText(),
-                    txtPhone.getText(),
-                    txtEmail.getText(),
+                    txtName.getText().trim(),
+                    txtLastName.getText().trim(),
+                    txtId.getText().trim(),
+                    txtPhone.getText().trim(),
+                    txtEmail.getText().trim(),
                     concurso
             );
 

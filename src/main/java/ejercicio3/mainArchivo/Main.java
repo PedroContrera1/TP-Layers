@@ -1,4 +1,4 @@
-package ejercicio3;
+package ejercicio3.mainArchivo;
 
 import ejercicio3.Modelo.Inscripciones;
 import ejercicio3.Persistencia.ArchivoConcursos;

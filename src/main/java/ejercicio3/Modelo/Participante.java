@@ -11,11 +11,11 @@ public class Participante {
     private final String telefono;
     private final String email;
     public Participante(String dni, String nombre,String apellido, String email, String telefono) {
-        validarDni(dni);
         validarNombre(nombre);
         validarApellido(apellido);
-        validarEmail(email);
+        validarDni(dni);
         validarTelefono(telefono);
+        validarEmail(email);
         this.dni = dni;
         this.nombre = nombre;
         this.apellido=apellido;
@@ -33,18 +33,23 @@ public class Participante {
 
     private void validarNombre(String nombre) {
         if (nombre == null || nombre.trim().isEmpty()) {
-            throw new RuntimeException("El nombre no puede estar vacío");
+            throw new RuntimeException("El campo nombre no puede estar vacío");
         }
     }
     private void validarApellido(String apellido) {
         if (apellido == null || apellido.trim().isEmpty()) {
-            throw new RuntimeException("El nombre no puede estar vacío");
+            throw new RuntimeException("El campo apellido no puede estar vacío");
         }
     }
 
     private void validarDni(String dni) {
         if (dni == null || dni.trim().isEmpty()) {
-            throw new RuntimeException("El id del participante no puede estar vacío");
+            throw new RuntimeException("El Dni del participante no puede estar vacío");
+        }
+        String formato="^\\d{7,8}$";
+        String dniLimpio = dni.replace(".", "").trim();
+        if (!dniLimpio.matches((formato))){
+            throw new RuntimeException("El dni debe tener 7 u 8 digitos");
         }
     }
     private void validarTelefono(String telefono){
@@ -58,11 +63,11 @@ public class Participante {
     }
     private void validarEmail(String email){
         if (email==null || email.isEmpty()){
-            throw new RuntimeException("El campo telefono no puede ser vacio");
+            throw new RuntimeException("El campo mail no puede ser vacio");
         }
-        String formato= "^[\\w-_.+]*[\\w-_.]@(\\w+\\.)+\\w+\\w$";
+        String formato= "^[\\w-_\\.+]*[\\w-_\\.]\\@([\\w]+\\.)+[\\w]+[\\w]$";
         if (!email.matches(formato)){
-            throw new RuntimeException("El email debe ingresarse de la siguiente forma: NNNN-NNNNNN");
+            throw new RuntimeException("Email no valido");
         }
     }
     @Override
